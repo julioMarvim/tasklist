@@ -6,6 +6,17 @@ import authMiddleaware from './app/middlewares/auth.js';
 
 const routes = new Router();
 
+/**
+ * @swagger
+ * /users:
+ *   post:
+ *     summary: Cria um novo usuário
+ *     responses:
+ *       200:
+ *         description: Usuário criado com sucesso.
+ *       400:
+ *         description: Falha na requisição.
+ */
 routes.post('/users', UserController.store);
 routes.post('/sessions', SessionController.store);
 
