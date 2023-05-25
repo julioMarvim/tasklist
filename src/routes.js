@@ -107,10 +107,14 @@ routes.post('/tasks', TaskController.store);
  * @swagger
  * /tasks:
  *   get:
- *     summary: Retorna todas as tarefas
+ *     summary: Obtém todas as tarefas
+ *     security:
+ *       - bearerAuth: []
  *     responses:
  *       200:
- *         description: Requisição bem-sucedida.
+ *         description: Retorna todas as tarefas com sucesso
+ *       401:
+ *         description: Não autorizado
  */
 routes.get('/tasks', TaskController.index);
 
